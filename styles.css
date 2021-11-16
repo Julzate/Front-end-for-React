@@ -1,0 +1,195 @@
+:root{
+    --very-light-pink: #C7C7C7;
+    --Text-input-field: #F7F7F7;
+    --Hospital-green:   #ACD9B2;
+    --White: #FFFFFF;
+    --Black: #000000;
+    --Dark: #232830;
+    --sm:14px;
+    --md:16px;
+    --lg:18px;
+}
+
+body{
+    font-family: 'Quicksand', sans-serif;
+    margin: 0;
+}
+
+.login{
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    place-items: center; /* esto sirve para alinear horizontal y verticalmente (se puede hacer con flex) */
+    
+}
+.form-container{
+    /* aqui creamos las filas usando grid */
+    display: grid;
+   /*  auto es para que adopte el espacio que quiera en la primera fila  y la segunda adopta 1fraccion,que es la que contiene password, lo restante igualmente sera en auto */ 
+    grid-template-rows: auto 1fr auto;
+    width: 300px;
+
+}
+.logo{
+    width: 150px;
+    margin-bottom: 48px;
+    justify-self: center;
+    display: none; /* para que no aparesca en desktop pero luego aparecera en mobile */
+}
+.title{
+    font-size: var(--lg);
+    margin-bottom: 12px;   /* al estar organizados en un grid no colapsan los margenes */
+    text-align: center;
+}
+.tittle-myaccount{
+    font-size: var(--lg);
+    margin-bottom: 36px;  
+}
+.subtitle{
+    font-size: var(--md);
+    font-weight: 300;
+    color: var(--Dark);
+    margin-top: 0; /* para que no choque con el margin bottom del title */
+    margin-bottom: 35px; /* para separarlo de los inputs */
+    text-align: center;
+}
+.form{
+    display: grid;
+}
+.form div{
+    display: flex;
+    flex-direction: column;
+}
+
+form a {
+    text-decoration: none;
+    color: var(--Hospital-green);
+    font-size: var(--sm);
+    text-align: center;
+    margin-bottom: 50px;
+}
+.label{
+    font-size: var(--sm);
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+.input{
+    background-color: var(--Text-input-field);
+    border: none;
+    border-radius: 8px;
+    height: 30px;
+    font-size: var(--md);
+    padding: 6px; /* para que no se peguen tanto los inputs */
+ /*    para poner el password por encima podemos usar algun display, display grid tambien funciona
+    o podemos estilizar el container form 
+    display: flex;
+    flex-direction: column; */
+    margin-bottom: 12px;
+}
+.input-name,
+.input-email,
+.input.password{
+    margin-bottom: 20px;
+}
+.primary-button{
+    background-color: var(--Hospital-green);
+    border-radius: 8px;
+    border: none;
+    height: 50px;
+    width: 100%;
+    color: var(--White);
+    cursor: pointer;
+    font-size: var(--md);
+    font-weight: bold;
+}
+.value{
+    color: var(--very-light-pink);
+    font-size: var(--md);
+    margin: 8px 0px  32px 0px;
+}
+
+.secondary-button{
+    background-color: var(--White);
+    border-radius: 8px;
+    border: 1px solid var(--Hospital-green);
+    height: 45px;
+    width: 100%;
+    color: var(--Hospital-green);
+    cursor: pointer;
+    font-size: var(--md);
+    font-weight: bold;
+}
+.edit-button{
+    background-color: var(--White);
+    border-radius: 8px;
+    border: 1px solid var(--Hospital-green);
+    height: 45px;
+    width: 100%;
+    color: var(--Hospital-green);
+    cursor: pointer;
+    font-size: var(--md);
+    font-weight: bold;
+}
+
+.create-button{
+    margin-top: 25px;
+}
+
+.login-button{
+    margin-top: 14px;
+    margin-bottom: 40px;
+}
+/* usamos max-width por que de aqui para arriba todas las medidas van funcionar para  las medidas grandes, desde 640 para abajo va a aparecer el logo  */
+@media (max-width: 640px){
+    .logo{
+        display: block;
+    }
+    .secondary-button{
+        position: absolute;
+        width: 300px;
+        bottom: 20px;
+        
+    }
+    .form-containerMyaccount{
+        margin-top: 25px;
+        height: 100%;       
+    }
+    .form-myaccount{
+        height: 150%;
+    }
+}
+
+    
+
+
+/* ------- EMAIL SENT-------------------------------- */
+
+.email-image{
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    background-color: var(--Text-input-field);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.email-image img{
+    width: 80px;
+}
+.resend{
+    font-size: var(--md);
+}
+.resend span{
+    color: var(--very-light-pink);
+}
+.resend a {
+    color: var(--Hospital-green);
+    text-decoration: none;
+}
+.resend a:hover {
+    text-decoration: underline;
+}
+
+
